@@ -1,21 +1,21 @@
 module.exports = [
     {
-        nome: "Fernando Carvalho",
-        materia: ["Org. Comp", "LP2", "PLF"],
+        nome: "carvalho",
+        materia: ["org. comp", "lp2", "plf"],
         horario: ["18h", "20h"],
-        contato: "Email - carvalho@upe.br Celular - 9999999"
+        contato: "email - carvalho@upe.br Celular - 9999999"
     },
 
     {
-        nome: "Alex Borges",
-        materia: ["Geometria"],
+        nome: "alex",
+        materia: ["geometria"],
         horario: ["18h", "20h"],
         contato: "Email - alex@upe.br Celular - 9999999"
     },
 
     {
-        nome: "Sônia",
-        materia: ["Sociedade da Informação", "Sistemas Multimídia", "TIEAD"],
+        nome: "sônia",
+        materia: ["sociedade da informação", "sistemas multimídia", "tiead"],
         horario: ["18h", "20h"],
         contato: "Email - sonia@upe.br Celular - 9999999"
     },
