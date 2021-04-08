@@ -4,40 +4,18 @@ const commands = require("./commads")
 const informations = require("./professores");
 const Discord = require("discord.js");
 const client = new Discord.Client({
-    partials: ["MESSAGE"] //o bot terá acesso a coisas que aconteceram antes dele ser logado
+    partials: ["MESSAGE", "CHANNEL", "REACTION"] //o bot terá acesso a coisas que aconteceram antes dele ser logado
 });
-
-
+const welcome = require("./welcome");
 
 const PREFIX = "!";
 const MOD_ME_COMMAND = "mod-me";
 
-
-
-// client.on('message', msg => {
-//     if(msg.content === "ping"){
-//         msg.channel.send("Pong"); //não irá marcar o usuário
-//         msg.reply("Pong"); //irá marcar o usuário
-//     }
-// });
-
-/*client.on('messageDelete', msg => {
-    msg.channel.send("Para de apagar mensagem fdp");
-});*/
-
+client.on('messageDelete', msg => {
+    msg.channel.send("Pra que apagar quando Deus já viu?");
+});
 
 client.on('message', msg => {
-    /*if(!msg.content.startsWith(PREFIX)){
-        msg.channel.send("Prefixo está errado. Tente novamente.")
-        return;
-    };*/
-    
-   /*for(comand of commands){
-        for(information of informations){
-            if(comand)
-        }
-    }*/
-
     const index_hifen = msg.content.indexOf("-"); //retorna a posição do - na string
     const first_content = msg.content.slice(1, index_hifen)
     const second_content = msg.content.slice(index_hifen+1, (msg.content.legth))
@@ -50,7 +28,6 @@ client.on('message', msg => {
                 msg.channel.send(`Matéria do(a) professor(a): ${information.materia}`)
             }
         }
-        //alterar essa parte (criar array de materias por fora)
         const materia_especifica = information.materia.find(subject => {
             if (subject === first_content) return subject
         })
@@ -63,18 +40,35 @@ client.on('message', msg => {
             }
         }
     }
-
-
-    if(msg.content === `${PREFIX}`){
-
-        msg.channel.send("Carvalho");
-    }
-    
     if(msg.content === `${PREFIX}${MOD_ME_COMMAND}`){
         modUser(msg.member)
-        
     }
+    else if(second_content === 'periodo'){
+        msg.react(roleUser(msg.member, first_content));
+        msg.reply(`você foi adicionado ao cargo do ${first_content} período`);
+    }
+
 });
+
+function roleUser(member, period){
+    switch(period){
+        case "primeiro":
+            member.roles.add("829020097560576060");
+           return '1️⃣';
+        case "segundo":
+            member.roles.add("829020103860551740");
+            return '2️⃣';
+        case "terceiro": 
+            member.roles.add("829020110747861062"); 
+            return '3️⃣';
+        case "quarto": 
+            member.roles.add("829020113466163220"); 
+            return '4️⃣';
+        case "quinto": 
+            member.roles.add("829020115353468929"); 
+            return '5️⃣'; //falta completar 
+    }
+}
 
 function modUser(member){
     member.roles.add("820329139747422209");
@@ -82,6 +76,7 @@ function modUser(member){
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
+    welcome(client);
 });
 
 client.login(process.env.BOT_TOKEN);
