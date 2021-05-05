@@ -1,0 +1,103 @@
+<%- include('partials/header') %>
+
+    <div class="home-container">
+        <div class="left-container"></div>
+  
+        <div class="right-container">
+          <div class="formh">
+            <form action="/home" method="POST" id="formEvent">
+              <div class="user-inputh">
+                <label for="course">Matéria</label>
+                <select name="courseName" id="course" required>
+                  <option value="Cálculo 1">Cálculo 1</option>
+                  <option value="Administração">Administração</option>
+                        <option value="Geometria Analítica">Geometria Analítica</option>
+                        <option value="Sociedade da Informação">Sociedade da Informação</option>
+                        <option value="Comunicação">Comunicação</option>
+                        <option value="LPA 1">LPA 1</option>
+                        <option value="Inglês Técnico">Inglês Técnico</option>
+                        <option value="PLP">PLP</option>
+                        <option value="Cálculo 2">Cálculo 2</option>
+                        <option value="Economia">Economia</option>
+                        <option value="Álgebra Linear">Álgebra Linear</option>
+                        <option value="LPA 2">LPA 2</option>
+                        <option value="LP 1">LP 1</option>
+                        <option value="Probabilidade e Estatísitca">Probabilidade e Estatísitca</option>
+                        <option value="IPC">IPC</option>
+                        <option value="OC">OC</option>
+                        <option value="SI 1">SI 1</option>
+                        <option value="Matemática Discreta">Matemática Discreta</option>
+                        <option value="Compiladores">Compiladores</option>
+                        <option value="LP 2">LP 2</option>
+                        <option value="OO">OO</option>
+                        <option value="AC">AC</option>
+                        <option value="Computação Gráfica">Computação Gráfica</option>
+                        <option value="ADM Contábil e Financeira">ADM Contábil e Financeira</option>
+                        <option value="SI 2">SI 2</option>
+                        <option value="EDA">EDA</option>
+                        <option value="BD 1">BD 1</option>
+                        <option value="Engenharia de Software">Engenharia de Software</option>
+                        <option value="Gerência de RH">Gerência de RH</option>
+                        <option value="IA">IA</option>
+                        <option value="Projeto de OO">Projeto de OO</option>
+                        <option value="Sistema Multimídia">Sistema Multimídia</option>
+                        <option value="SO">SO</option>
+                        <option value="BD 2">BD 2</option>
+                        <option value="TOPAES">TOPAES</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Gerência de Projetos">Gerência de Projetos</option>
+                        <option value="Redes 1">Redes 1</option>
+                        <option value="Seminários Especializados">Seminários Especializados</option>
+                        <option value="Internet em SI">Internet em SI</option>
+                        <option value="TIA">TIA</option>
+                        <option value="Empreendedorismo">Empreendedorismo</option>
+                        <option value="Gestão de TI">Gestão de TI</option>
+                        <option value="Estágio Supervisionado">Estágio Supervisionado</option>
+                        <option value="Redes 2">Redes 2</option>
+                        <option value="Sistemas Distribuídos">Sistemas Distribuídos</option>
+                        <option value="Segurança em SI">Segurança em SI</option>
+                        <option value="Comércio Eletrônico">Comércio Eletrônico</option>
+                        <option value="Ti em EAD">Ti em EAD</option>
+                        <option value="Sistemas Distribuídos">Sistemas Distribuídos</option>
+                        <option value="Processamento digital de imagens">Processamento digital de imagens</option>
+                        <option value="ADM e Integração de Sistemas">ADM e Integração de Sistemas</option>
+                        <option value="Sistemas Cooperativos">Sistemas Cooperativos</option>
+                        <option value="Gerenciamento de Redes">Gerenciamento de Redes</option>
+                        <option value="Mineração de Dados">Mineração de Dados</option>
+                        <option value="Princípios de Telecomunicações">Princípios de Telecomunicações</option>
+                        <option value="Redes Neurais">Redes Neurais</option>
+                        <option value="Cognição em TI">Cognição em TI</option>
+                        <option value="PLF">PLF</option>
+                        <option value="TCC">TCC</option>
+                </select>
+              </div>
+  
+              <div class="user-inputh">
+                <label>Professor </label>
+                <input type="text" name="professorName" />
+              </div>
+  
+              <div class="user-inputh">
+                <label>Horário </label>
+                <input type="text" name="time" />
+              </div>
+  
+              <div class="user-inputh">
+                <label>Período </label>
+                <input type="number" name="coursePeriod" />
+              </div>
+  
+              <div class="user-inputh">
+                <label>Contato </label>
+                <input type="text" name="professorContact" />
+              </div>
+              <div class="buttons">
+                <button class="button" type="submit">ENVIAR</button>
+                <button class="button1"><a href="/logout" role="button">SAIR</a></button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>
