@@ -48,7 +48,7 @@ const courseSchema = new mongoose.Schema({
     professor: String,
     time: String,
     contact: String,
-    period: Number
+    period: String
 })
 
 const Course = new mongoose.model("Course", courseSchema)
@@ -111,7 +111,7 @@ app.route("/home")
                                 console.log(err)
                             }else{
                                 console.log("Update")
-                }
+                             }
                 })
             }
         })
